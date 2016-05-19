@@ -1,11 +1,10 @@
 #!/usr/bin/env Rscript
 library(audio)
-suppressMessages(library(signal))
+suppressMessages(library(seewave))
 
 args=commandArgs(trailingOnly=T)
 for (x in args) {
 	v=load.wave(x)
 	n=min(1024, length(v))
-	plot(specgram(v, n, v$rate, hanning(n)))
-	title(x)
+	spectro(v, f=v$rate, osc=T, main=x) #, flim=c(0,5))
 }
