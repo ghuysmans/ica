@@ -77,9 +77,9 @@
 	\]
 
 	Chaque ligne $\color{red}a_i$ (coefficients pour le micro $i$) est multipliée
-	par une~colonne $\color{green}s_j$ (échantillons-sources en $t=j$)
+	par une colonne~$\color{green}s_j$ (échantillons-sources en $t=j$)
 	afin d'obtenir l'{\color{blue}amplitude} mesurée
-	par le~micro $i$ en le temps $j$.
+	par le~micro $i$ au temps $j$.
 	$X$ contient ainsi un vecteur-ligne par micro.
 	\pause
 
@@ -123,7 +123,7 @@
 	Ces informations ont en fait été perdues lors du mixage.
 \end{frame}
 \begin{frame}
-	\frametitle{Pré-traitement des données}
+	\frametitle{Prétraitement des données}
 	L'algorithme de FastICA demande en entrée des données qui sont traitées.
 	Deux opérations doivent être exécutées sur les données :
 	\pause
@@ -137,7 +137,7 @@
 		\pause
 			\\Le blanchissement des données est une
 			technique\footnote{Utilisée aussi pour l'ACP}
-			qui consiste à décorréller les données en diagonalisant
+			qui consiste à décorréler les données en diagonalisant
 			leur matrice de covariance.
 	
 	\end{enumerate}
@@ -161,7 +161,8 @@
 \begin{frame}
 	\frametitle{FastICA}
 	Intuitivement, le théorème de la limite centrale nous montre que pour un
-	certain nombre de V.A.R., la somme de celles-ci se répartit de manière
+	certain nombre de V.A.R.\footnote{Variable Aléatoire Réelle},
+	la somme de celles-ci se répartit de manière
 	gaussienne. Nous allons donc ici essayer de minimiser leur caractère
 	gaussien afin de nous rapprocher des sources indépendantes recherchées.
 	\pause
@@ -229,12 +230,12 @@
 \begin{frame}
 	\frametitle{Problèmes pratiques}
 	L'algorithme FastICA ne gère pas la désynchronisation des mixages.
-	Si il y a un léger décalage entre les deux mixage, l'algorithme ne
+	Si il y a un léger décalage entre les deux mixages, l'algorithme ne
 	fonctionnera pas.
 	\pause
 	
 	\begin{block}{Solution}
-	Comme dans le cinéma où le son et l'image étaient séparés (du moins
+	Comme dans le monde du cinéma où le son et l'image étaient séparés (du moins
 	jusqu'à il y a peu), on réalisait un <<~clap~>> pour synchroniser
 	les deux parties.
 	\end{block}
