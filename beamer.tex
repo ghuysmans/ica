@@ -8,9 +8,12 @@
 \usepackage{dcolumn}
 \newcolumntype{d}[1]{D{.}{.}{#1}}
 \usepackage[francais]{babel}
+\usepackage{tikz}
+\usepackage{soul}
 \newcommand{\esN}{\mathbb{N}}
 \newcommand{\esR}{\mathbb{R}}
 \usetheme[navigation]{UMONS}
+\setbeamertemplate{caption}[numbered]
 \title{Analyse en composantes indépendantes}
 \date{25 mai 2016}
 \author[G. \textsc{Huysmans}, M. \textsc{Lempereur}]
@@ -160,19 +163,44 @@
 \section{Exemples}
 \begin{frame}
 	\frametitle{Sinusoïdes}
-	\begin{enumerate}
-	\item first
-	\item second
-	\end{enumerate}
+	Un des cas les plus simples est la superposition de sinusoïdes.
+	\vfill
+
+	\begin{minipage}[b]{.35\textwidth}
+	\begin{figure}[h]
+	\includegraphics[width=\textwidth]{sine.png}
+	\caption{Avant}
+	\end{figure}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{.35\textwidth}
+	\begin{figure}[h]
+	\includegraphics[width=\textwidth]{sine_d.png}
+	\caption{Après}
+	\end{figure}
+	\end{minipage}
+
+	\begin{block}{Observation}
+	L'ordre n'est pas préservé et lors de cette exécution,
+	la sinusoïde à 660~Hz arrive la première dans le résultat.
+	\end{block}
 \end{frame}
 
 
 \begin{frame}
 	\frametitle{Extraits audio}
-	\begin{enumerate}
-	\item first
-	\item second
-	\end{enumerate}
+	Deux extraits très différents sont joués en même temps.
+	On les suppose indépendants et non gaussiens...
+	\begin{figure}[h]
+	\includegraphics<1>[height=.65\textheight]{blunt_kavinsky_r.png}
+	\includegraphics<2>[height=.65\textheight]{blunt_kavinsky_l.png}
+	\includegraphics<3>[height=.65\textheight]{blunt_kavinsky_m2.png}
+	\caption{
+		\only<1>{James Blunt - Postcards}
+		\only<2>{Kavinsky - Night Call}
+		\only<3>{\st{Mix} Superposition}
+	}
+	\end{figure}
 \end{frame}
 
 
