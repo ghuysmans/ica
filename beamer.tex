@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage{cancel}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{color}
 \usepackage{dcolumn}
 \newcolumntype{d}[1]{D{.}{.}{#1}}
@@ -153,14 +154,14 @@
 \section{Implémentation}
 \begin{frame}
 	\frametitle{FastICA}
-	Le mixage est modélisé dans l'autre sens :
-	\[
-		S^TA^T=X^T
-	\]
-	%TODO match the doc
-	Intuitivement, le théorème de la limite centrale nous montre que pour un 
-	certain nombre de V.A.R., la somme de celles-ci se répartit de manière gaussienne. 
-	Nous allons donc ici essayer de	faire l'inverse en cherchant des sources non gaussiennes.
+	Intuitivement, le théorème de la limite centrale nous montre que pour un
+	certain nombre de V.A.R., la somme de celles-ci se répartit de manière
+	gaussienne. Nous allons donc ici essayer de minimiser leur caractère
+	gaussien afin de nous rapprocher des sources indépendantes recherchées.
+	\pause
+
+	L'algorithme FastICA utilise des heuristiques et il est donc normal
+	de ne pas observer le même résultat à chaque exécution.
 	
 \end{frame}
 
@@ -188,9 +189,25 @@
 \begin{frame}
 	\frametitle{Problèmes pratiques}
 	L'algorithme FastICA ne gère pas la désynchronisation des mixages.
-	Si il y a un léger décalage entre les deux mixage,l'algorithme ne fonctionnera pas.
-	synchro, clap
-	convolution
+	Si il y a un léger décalage entre les deux mixage, l'algorithme ne
+	fonctionnera pas.
+	\pause
+	
+	\begin{block}{Solution}
+	Comme dans le cinéma où le son et l'image étaient séparés (du moins
+	jusqu'à il y a peu), on réalisait un <<~clap~>> pour synchroniser
+	les deux parties.
+	\end{block}
+	\pause
+
+	Un autre problème qui se pose est celui de l'écho : on enregistre une
+	somme de convolutions de nos sources avec la réponse impulsionnelle de
+	la pièce alors que le modèle ne prévoit pas ce cas-là.
+	\pause
+	
+	\begin{block}{Solution}
+	Enregistrer dans de meilleures conditions ?
+	\end{block}
 \end{frame}
 
 
