@@ -124,13 +124,17 @@
 	Deux opérations doivent être exécutées sur les données :
 	\pause
 	\begin{enumerate}
+	\item Centrage
+		\pause
+			\\La première action à effectuer est la mise à zéro de la moyenne.
+			Pour cela, on la soustrait au vecteur.
+			\pause
 	\item Blanchissement des données.
 		\pause
 			\\Le blanchissement des données est une
 			technique\footnote{Utilisée aussi pour l'ACP}
 			qui consiste à décorréller les données en diagonalisant
 			leur matrice de covariance.
-	\pause
 	
 	\end{enumerate}
 \end{frame}
@@ -154,6 +158,10 @@
 		S^TA^T=X^T
 	\]
 	%TODO match the doc
+	Intuitivement, le théorème de la limite centrale nous montre que pour un 
+	certain nombre de V.A.R., la somme de celles-ci se répartit de manière gaussienne. 
+	Nous allons donc ici essayer de	faire l'inverse en cherchant des sources non gaussiennes.
+	
 \end{frame}
 
 
@@ -173,6 +181,16 @@
 	\item first
 	\item second
 	\end{enumerate}
+\end{frame}
+
+
+\section{Problèmes pratiques}
+\begin{frame}
+	\frametitle{Problèmes pratiques}
+	L'algorithme FastICA ne gère pas la désynchronisation des mixages.
+	Si il y a un léger décalage entre les deux mixage,l'algorithme ne fonctionnera pas.
+	synchro, clap
+	convolution
 \end{frame}
 
 
