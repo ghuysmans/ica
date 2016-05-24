@@ -162,10 +162,19 @@
 	gaussienne. Nous allons donc ici essayer de minimiser leur caractère
 	gaussien afin de nous rapprocher des sources indépendantes recherchées.
 	\pause
+	\vfill
 
 	L'algorithme FastICA utilise des heuristiques et il est donc normal
 	de ne pas observer le même résultat à chaque exécution.
-	
+	\pause
+	\vfill
+
+	\begin{block}{Échantillons sonores}
+	Le résultat de l'analyse ne sera pas forcément dans $[-1;1]$,
+	il conviendra donc de le transformer un minimum en le recentrant
+	sur sa moyenne puis en le compressant/dilatant.
+	\end{block}
+
 \end{frame}
 
 
